@@ -283,7 +283,7 @@ function App() {
           <h2>Let's Build Something Amazing Together</h2>
           <p>From MVPs to enterprise solutions, I deliver production-ready applications that generate real business value.</p>
           <div className="cta-buttons">
-            <a href="https://linkedin.com/in/evgoncharov" className="btn btn-primary">Message on LinkedIn</a>
+            <a href="mailto:tech@techconcepts.org" className="btn btn-primary">Send Email</a>
             <a href="https://github.com/Strategyherogo" className="btn btn-secondary">View GitHub</a>
           </div>
         </div>
@@ -318,7 +318,7 @@ function App() {
               <ul>
                 <li><a href="https://linkedin.com/in/evgoncharov">LinkedIn (19K followers)</a></li>
                 <li><a href="https://github.com/Strategyherogo">GitHub Portfolio</a></li>
-                <li><a href="https://linkedin.com/in/evgoncharov">Message on LinkedIn</a></li>
+                <li><a href="mailto:tech@techconcepts.org">tech@techconcepts.org</a></li>
               </ul>
             </div>
           </div>
