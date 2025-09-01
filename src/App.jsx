@@ -1,8 +1,12 @@
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
+import { HashRouter as Router, Routes, Route, Link } from 'react-router-dom'
+import { lazy, Suspense } from 'react'
 import Home from './Home'
-import About from './About'
-import Blog from './Blog'
 import './App.css'
+
+// Lazy load About and Blog pages for better performance
+const About = lazy(() => import('./About'))
+const Blog = lazy(() => import('./Blog'))
+const NotFound = lazy(() => import('./NotFound'))
 
 function App() {
   return (
@@ -23,11 +27,14 @@ function App() {
         </nav>
 
         {/* Routes */}
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/blog" element={<Blog />} />
-        </Routes>
+        <Suspense fallback={<div className="loading">Loading...</div>}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Suspense>
 
         {/* Footer */}
         <footer className="footer">
