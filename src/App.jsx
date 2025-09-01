@@ -1,6 +1,7 @@
-import { HashRouter as Router, Routes, Route, Link } from 'react-router-dom'
+import { HashRouter as Router, Routes, Route } from 'react-router-dom'
 import { lazy, Suspense } from 'react'
 import Home from './Home'
+import Navigation from './Navigation'
 import './App.css'
 
 // Lazy load About and Blog pages for better performance
@@ -13,18 +14,7 @@ function App() {
     <Router>
       <div className="app">
         {/* Navigation */}
-        <nav className="navbar">
-          <div className="container">
-            <Link to="/" className="nav-brand">TechConcepts</Link>
-            <ul className="nav-menu">
-              <li><Link to="/">Home</Link></li>
-              <li><Link to="/about">About</Link></li>
-              <li><Link to="/blog">Blog</Link></li>
-              <li><a href="/#products">Products</a></li>
-              <li><a href="/#contact">Contact</a></li>
-            </ul>
-          </div>
-        </nav>
+        <Navigation />
 
         {/* Routes */}
         <Suspense fallback={<div className="loading">Loading...</div>}>
