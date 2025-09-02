@@ -2,6 +2,7 @@ import { HashRouter as Router, Routes, Route } from 'react-router-dom'
 import { lazy, Suspense } from 'react'
 import Home from './Home'
 import Navigation from './Navigation'
+import SEO from './SEO'
 import './App.css'
 
 // Lazy load About and Blog pages for better performance
@@ -15,6 +16,9 @@ function App() {
   return (
     <Router>
       <div className="app">
+        {/* SEO Component for dynamic meta tags */}
+        <SEO />
+        
         {/* Navigation */}
         <Navigation />
 

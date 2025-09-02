@@ -277,7 +277,7 @@ function CaseStudies() {
       <section className="case-studies-cta">
         <div className="container">
           <h2>Ready to Be the Next Success Story?</h2>
-          <p>Let's discuss how we can achieve similar results for your business</p>
+          <p>Let's discuss how we can achieve similar results for your business. <a href="/#/services" style={{color: '#2563eb'}}>Explore our services</a> or <a href="/#/about" style={{color: '#2563eb'}}>learn more about us</a>.</p>
           <a href="mailto:tech@techconcepts.org?subject=Project Discussion" className="btn btn-primary">
             Start Your Project
           </a>

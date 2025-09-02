@@ -129,10 +129,10 @@ function Services() {
       {/* Hero Section */}
       <section className="services-hero">
         <div className="container">
-          <h1 className="services-title">Transform Your Ideas Into Revenue</h1>
+          <h1 className="services-title">Machine Learning & SaaS Development Services in Madrid</h1>
           <p className="services-subtitle">
-            From ML models to SaaS products, I deliver production-ready solutions 
-            with measurable business impact
+            Professional ML consulting and Chrome extension development from Madrid, Spain. 
+            Delivering production-ready solutions with measurable business impact across Europe.
           </p>
           <div className="services-stats">
             <div className="stat-item">
@@ -249,7 +249,7 @@ function Services() {
       <section className="services-cta">
         <div className="container">
           <h2>Ready to Build Something Amazing?</h2>
-          <p>Let's discuss your project and find the perfect solution</p>
+          <p>Let's discuss your project and find the perfect solution. <a href="/#/case-studies" style={{color: '#2563eb'}}>View our case studies</a> for proven results.</p>
           <div className="cta-buttons">
             <a href="mailto:tech@techconcepts.org?subject=Project Inquiry - Free Consultation" className="btn btn-primary">
               Schedule Free Consultation

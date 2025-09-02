@@ -6,11 +6,11 @@ function Home() {
       {/* Hero Section */}
       <section className="hero">
         <div className="container">
-          <div className="hero-badge">10+ Production Applications</div>
-          <h1 className="hero-title">Building Revenue-Generating Tech Products</h1>
+          <div className="hero-badge">Madrid-Based ML Consultant • 10+ Production Applications</div>
+          <h1 className="hero-title">Machine Learning Consultant & Chrome Extension Developer in Madrid</h1>
           <p className="hero-subtitle">
             From Chrome extensions for VCs to ML models with €1.2M impact. 
-            Creating intelligent solutions across web, mobile, and enterprise platforms.
+            Creating intelligent SaaS solutions for Spanish and international markets from Madrid.
           </p>
           <div className="hero-stats">
             <div className="stat">
@@ -267,8 +267,8 @@ function Home() {
       {/* CTA Section */}
       <section id="contact" className="cta">
         <div className="container">
-          <h2>Let's Build Something Amazing Together</h2>
-          <p>From MVPs to enterprise solutions, I deliver production-ready applications that generate real business value.</p>
+          <h2>Looking for a Machine Learning Consultant in Madrid?</h2>
+          <p>From MVPs to enterprise ML solutions, I deliver production-ready applications that generate real business value. Serving Madrid, Spain, and international clients.</p>
           <div className="cta-buttons">
             <a href="mailto:tech@techconcepts.org" className="btn btn-primary">Send Email</a>
             <a href="https://github.com/Strategyherogo" className="btn btn-secondary">View GitHub</a>
