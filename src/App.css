@@ -1146,3 +1146,470 @@ body {
     text-align: left;
   }
 }
+/* Services Page Styles */
+.services-page {
+  min-height: 100vh;
+}
+
+.services-hero {
+  padding: 8rem 0 4rem;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+  text-align: center;
+}
+
+.services-title {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #2563eb, #64748b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.services-subtitle {
+  font-size: 1.25rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto 3rem;
+}
+
+.services-stats {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-value {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #2563eb;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+.services-grid-section {
+  padding: 5rem 0;
+  background: #0a0a0a;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.service-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  border-color: #2563eb;
+  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.2);
+}
+
+.service-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.service-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.service-price {
+  color: #2563eb;
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.service-description {
+  opacity: 0.9;
+  margin-bottom: 1.5rem;
+}
+
+.service-features {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+}
+
+.service-features li {
+  padding: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  opacity: 0.85;
+}
+
+.service-features li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #4caf50;
+}
+
+.service-case-study {
+  background: rgba(37, 99, 235, 0.1);
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.process-section {
+  padding: 5rem 0;
+  background: #0f0f0f;
+}
+
+.process-timeline {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.process-step {
+  text-align: center;
+  position: relative;
+}
+
+.step-number {
+  width: 60px;
+  height: 60px;
+  background: #2563eb;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0 auto 1rem;
+}
+
+.process-step h3 {
+  margin-bottom: 0.5rem;
+}
+
+.step-duration {
+  display: inline-block;
+  background: rgba(37, 99, 235, 0.1);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+}
+
+.tech-stack-section {
+  padding: 5rem 0;
+  background: #0a0a0a;
+}
+
+.tech-categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.tech-category h3 {
+  margin-bottom: 1rem;
+  color: #2563eb;
+}
+
+.tech-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tech-tag {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+.guarantee-section {
+  padding: 5rem 0;
+  background: #0f0f0f;
+}
+
+.guarantee-card {
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(100, 116, 139, 0.05));
+  border: 1px solid rgba(37, 99, 235, 0.3);
+  border-radius: 12px;
+  padding: 3rem;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.guarantee-card h2 {
+  margin-bottom: 1.5rem;
+  color: #2563eb;
+}
+
+.guarantee-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+  text-align: left;
+  display: inline-block;
+}
+
+.guarantee-card ul li {
+  padding: 0.5rem 0;
+}
+
+.guarantee-note {
+  margin-top: 2rem;
+  font-style: italic;
+  opacity: 0.9;
+}
+
+.services-cta {
+  padding: 5rem 0;
+  background: linear-gradient(135deg, #1a1a2e, #0a0a0a);
+  text-align: center;
+}
+
+/* Case Studies Page Styles */
+.case-studies-page {
+  min-height: 100vh;
+}
+
+.case-studies-hero {
+  padding: 8rem 0 4rem;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+  text-align: center;
+}
+
+.case-studies-title {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #2563eb, #4caf50);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.case-studies-subtitle {
+  font-size: 1.25rem;
+  opacity: 0.9;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.case-studies-list {
+  padding: 5rem 0;
+  background: #0a0a0a;
+}
+
+.case-study-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 3rem;
+}
+
+.case-study-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.case-study-icon {
+  font-size: 4rem;
+}
+
+.case-study-meta {
+  flex: 1;
+}
+
+.case-study-meta h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.case-study-info {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  opacity: 0.8;
+  font-size: 0.9rem;
+}
+
+.case-study-impact {
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.2), rgba(76, 175, 80, 0.1));
+  border: 1px solid rgba(37, 99, 235, 0.3);
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  text-align: center;
+}
+
+.impact-label {
+  display: block;
+  font-size: 0.85rem;
+  opacity: 0.7;
+  margin-bottom: 0.5rem;
+}
+
+.impact-value {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2563eb;
+}
+
+.case-study-content {
+  display: grid;
+  gap: 2rem;
+}
+
+.challenge-section,
+.solution-section,
+.results-section,
+.metrics-section,
+.testimonial-section {
+  background: rgba(255, 255, 255, 0.02);
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.case-study-content h3 {
+  margin-bottom: 1rem;
+  color: #2563eb;
+}
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.tech-badge {
+  background: rgba(37, 99, 235, 0.1);
+  border: 1px solid rgba(37, 99, 235, 0.3);
+  padding: 0.25rem 0.75rem;
+  border-radius: 15px;
+  font-size: 0.85rem;
+}
+
+.results-list {
+  list-style: none;
+  padding: 0;
+}
+
+.results-list li {
+  padding: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.results-list li:before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: #4caf50;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.metric-item {
+  background: rgba(37, 99, 235, 0.05);
+  border: 1px solid rgba(37, 99, 235, 0.2);
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.metric-label {
+  display: block;
+  font-size: 0.85rem;
+  opacity: 0.7;
+  margin-bottom: 0.5rem;
+}
+
+.metric-value {
+  display: block;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #2563eb;
+}
+
+.testimonial-section blockquote {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: #4caf50;
+  border-left: 3px solid #4caf50;
+  padding-left: 1.5rem;
+  margin: 0;
+}
+
+.case-study-footer {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.success-metrics {
+  padding: 5rem 0;
+  background: linear-gradient(135deg, #0f0f0f, #1a1a2e);
+}
+
+.metrics-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.metric-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+}
+
+.metric-number {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #2563eb;
+  margin-bottom: 0.5rem;
+}
+
+.metric-description {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.case-studies-cta {
+  padding: 5rem 0;
+  background: #0a0a0a;
+  text-align: center;
+}

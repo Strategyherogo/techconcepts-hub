@@ -7,6 +7,8 @@ import './App.css'
 // Lazy load About and Blog pages for better performance
 const About = lazy(() => import('./About'))
 const Blog = lazy(() => import('./Blog'))
+const Services = lazy(() => import('./Services'))
+const CaseStudies = lazy(() => import('./CaseStudies'))
 const NotFound = lazy(() => import('./NotFound'))
 
 function App() {
@@ -22,6 +24,8 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/case-studies" element={<CaseStudies />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>

@@ -47,19 +47,10 @@ function Navigation() {
         <Link to="/" className="nav-brand">TechConcepts</Link>
         <ul className="nav-menu">
           <li><Link to="/">Home</Link></li>
+          <li><Link to="/services">Services</Link></li>
+          <li><Link to="/case-studies">Case Studies</Link></li>
           <li><Link to="/about">About</Link></li>
           <li><Link to="/blog">Blog</Link></li>
-          <li>
-            <a 
-              href="#products" 
-              onClick={(e) => {
-                e.preventDefault()
-                scrollToSection('products')
-              }}
-            >
-              Products
-            </a>
-          </li>
           <li>
             <a 
               href="#contact" 
