@@ -57,6 +57,19 @@
       }
     }
     </script>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MEASUREMENT-ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-MEASUREMENT-ID');
+    </script>
+    <!-- Note: Replace G-MEASUREMENT-ID with your actual Google Analytics ID -->
+    
+    <!-- Alternative: Privacy-focused analytics with Plausible (optional) -->
+    <!-- <script defer data-domain="techconcepts.org" src="https://plausible.io/js/script.js"></script> -->
   </head>
   <body>
     <div id="root"></div>
