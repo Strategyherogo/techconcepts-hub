@@ -20,7 +20,7 @@ function CaseStudies() {
         "Processing 210K+ transactions monthly",
         "Regional insights: Poland 41%, Turkey 27% recovery rates"
       ],
-      testimonial: "Evgeny's ML model transformed our payment recovery process. The €1.2M impact speaks for itself.",
+      testimonial: "The ML model transformed our payment recovery process, delivering measurable business impact.",
       metrics: {
         "Recovery Rate": "3% → 8%",
         "Revenue Impact": "€1.2M",
@@ -46,7 +46,7 @@ function CaseStudies() {
         "PDF/CSV export for investment memos",
         "Live API at monkfish-app-7otbm.ondigitalocean.app"
       ],
-      testimonial: "This tool saves our analysts 2-3 hours per company evaluation.",
+      testimonial: "Significant time savings in company evaluation and analysis processes.",
       metrics: {
         "Analysis Time": "2 hours → 10 seconds",
         "Data Sources": "15+",
@@ -72,7 +72,7 @@ function CaseStudies() {
         "Streaming responses for better UX",
         "Ready for Mac App Store distribution"
       ],
-      testimonial: "Finally, one app for all my AI needs. Game-changer for productivity.",
+      testimonial: "Unified AI interface significantly improves workflow efficiency.",
       metrics: {
         "LLM Providers": "9",
         "Response Time": "<100ms",
@@ -98,7 +98,7 @@ function CaseStudies() {
         "Ready for Teams Store submission",
         "Enterprise-grade security"
       ],
-      testimonial: "Best task management solution we've found for Teams.",
+      testimonial: "Effective task management solution with seamless Teams integration.",
       metrics: {
         "Load Time": "<1s",
         "User Capacity": "10K+",
@@ -124,7 +124,7 @@ function CaseStudies() {
         "Real-time task creation",
         "GitHub: Strategyherogo/AppsTest"
       ],
-      testimonial: "Our team never misses an action item anymore. Incredible automation.",
+      testimonial: "Automated task detection ensures no action items are missed.",
       metrics: {
         "Detection Accuracy": "92%",
         "Response Time": "<500ms",
@@ -150,7 +150,7 @@ function CaseStudies() {
         "Real-time progress tracking",
         "Cancel operation anytime"
       ],
-      testimonial: "Saved me literally days of manual work. Brilliant tool!",
+      testimonial: "Dramatic time savings through intelligent file organization automation.",
       metrics: {
         "Files/Minute": "100+",
         "Time Saved": "95%",

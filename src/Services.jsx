@@ -251,11 +251,11 @@ function Services() {
           <h2>Ready to Build Something Amazing?</h2>
           <p>Let's discuss your project and find the perfect solution</p>
           <div className="cta-buttons">
-            <a href="mailto:tech@techconcepts.org?subject=Project Inquiry" className="btn btn-primary">
+            <a href="mailto:tech@techconcepts.org?subject=Project Inquiry - Free Consultation" className="btn btn-primary">
               Schedule Free Consultation
             </a>
-            <a href="https://calendly.com/techconcepts" className="btn btn-secondary">
-              Book 30-min Call
+            <a href="mailto:tech@techconcepts.org?subject=Request 30-min Call" className="btn btn-secondary">
+              Request 30-min Call
             </a>
           </div>
         </div>
