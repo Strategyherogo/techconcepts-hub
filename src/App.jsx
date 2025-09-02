@@ -45,9 +45,9 @@ function App() {
                 <h4>Live Products</h4>
                 <ul>
                   <li><a href="https://monkfish-app-7otbm.ondigitalocean.app">DealFlow Analytics API</a></li>
-                  <li><a href="#">LLMChat for macOS</a></li>
-                  <li><a href="#">Teams Task Manager</a></li>
-                  <li><a href="#">ML Platform</a></li>
+                  <li><a href="https://github.com/Strategyherogo">LLMChat for macOS</a></li>
+                  <li><a href="mailto:tech@techconcepts.org?subject=Teams%20Task%20Manager">Teams Task Manager</a></li>
+                  <li><a href="mailto:tech@techconcepts.org?subject=ML%20Platform%20Inquiry">ML Platform</a></li>
                 </ul>
               </div>
               <div className="footer-section">

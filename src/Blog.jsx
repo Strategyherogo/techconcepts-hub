@@ -1,6 +1,18 @@
+import { useState } from 'react'
 import './App.css'
 
 function Blog() {
+  const [email, setEmail] = useState('')
+  const [newsletterStatus, setNewsletterStatus] = useState('')
+
+  const handleNewsletterSubmit = (e) => {
+    e.preventDefault()
+    if (email) {
+      setNewsletterStatus('Thank you for subscribing! Check your email for confirmation.')
+      setEmail('')
+      setTimeout(() => setNewsletterStatus(''), 5000)
+    }
+  }
   const blogPosts = [
     {
       id: 1,
@@ -114,7 +126,7 @@ function Blog() {
               <span>•</span>
               <span>Regional Innovation</span>
             </div>
-            <a href="#" className="btn btn-primary">Read Full Story</a>
+            <a href="https://linkedin.com/in/evgoncharov" className="btn btn-primary">Read on LinkedIn →</a>
           </div>
         </div>
       </section>
@@ -149,7 +161,7 @@ function Blog() {
                 </div>
                 <div className="blog-card-footer">
                   <span className="read-time">{post.readTime}</span>
-                  <a href="#" className="read-more">Read More →</a>
+                  <a href="https://linkedin.com/in/evgoncharov" className="read-more">Read on LinkedIn →</a>
                 </div>
               </article>
             ))}
@@ -163,10 +175,18 @@ function Blog() {
           <div className="newsletter-card">
             <h2>Stay Updated on Tech & Innovation</h2>
             <p>Get weekly insights on Spanish tech ecosystems, product development strategies, and ML implementation guides.</p>
-            <div className="newsletter-form">
-              <input type="email" placeholder="Enter your email" className="newsletter-input" />
-              <button className="btn btn-primary">Subscribe</button>
-            </div>
+            <form className="newsletter-form" onSubmit={handleNewsletterSubmit}>
+              <input 
+                type="email" 
+                placeholder="Enter your email" 
+                className="newsletter-input" 
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+              <button type="submit" className="btn btn-primary">Subscribe</button>
+            </form>
+            {newsletterStatus && <p className="newsletter-success">{newsletterStatus}</p>}
             <p className="newsletter-note">Join 19K+ professionals following my tech journey</p>
           </div>
         </div>

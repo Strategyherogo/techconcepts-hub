@@ -81,7 +81,7 @@ function Home() {
                 <span>9 LLMs</span>
               </div>
               <div className="product-links">
-                <a href="#" className="product-link">Mac App Store Ready</a>
+                <a href="https://github.com/Strategyherogo" className="product-link">View on GitHub →</a>
               </div>
             </div>
 
@@ -101,7 +101,7 @@ function Home() {
                 <span>$100K+ Potential</span>
               </div>
               <div className="product-links">
-                <a href="#" className="product-link">Teams Store Submission →</a>
+                <a href="mailto:tech@techconcepts.org?subject=Teams%20Task%20Manager%20Inquiry" className="product-link">Request Demo →</a>
               </div>
             </div>
 
@@ -141,7 +141,7 @@ function Home() {
                 <span>Redis</span>
               </div>
               <div className="product-links">
-                <a href="#" className="product-link">Enterprise Solution →</a>
+                <a href="mailto:tech@techconcepts.org?subject=ML%20Platform%20Enterprise%20Inquiry" className="product-link">Contact for Pricing →</a>
               </div>
             </div>
 
@@ -161,7 +161,7 @@ function Home() {
                 <span>Express</span>
               </div>
               <div className="product-links">
-                <a href="#" className="product-link">Learn More →</a>
+                <a href="mailto:tech@techconcepts.org?subject=Marketing%20Automation%20Inquiry" className="product-link">Get Details →</a>
               </div>
             </div>
           </div>

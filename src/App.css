@@ -1067,6 +1067,16 @@ body {
   opacity: 0.9;
 }
 
+.newsletter-success {
+  color: #4caf50;
+  font-size: 0.95rem;
+  margin: 1rem 0;
+  padding: 0.75rem;
+  background: rgba(76, 175, 80, 0.1);
+  border-radius: 8px;
+  border: 1px solid rgba(76, 175, 80, 0.3);
+}
+
 .blog-topics {
   padding: 5rem 0;
   background: #f8f9fa;
