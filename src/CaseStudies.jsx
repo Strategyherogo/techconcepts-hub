@@ -1,6 +1,8 @@
 import './App.css'
+import { useTranslation } from 'react-i18next'
 
 function CaseStudies() {
+  const { t } = useTranslation()
   const caseStudies = [
     {
       id: 1,
@@ -165,10 +167,8 @@ function CaseStudies() {
       {/* Hero Section */}
       <section className="case-studies-hero">
         <div className="container">
-          <h1 className="case-studies-title">Proven Results, Real Impact</h1>
-          <p className="case-studies-subtitle">
-            Deep dive into projects that generated millions in value and transformed businesses
-          </p>
+          <h1 className="case-studies-title">{t('caseStudies.hero.title')}</h1>
+          <p className="case-studies-subtitle">{t('caseStudies.hero.subtitle')}</p>
         </div>
       </section>
 
@@ -276,10 +276,10 @@ function CaseStudies() {
       {/* CTA Section */}
       <section className="case-studies-cta">
         <div className="container">
-          <h2>Ready to Be the Next Success Story?</h2>
-          <p>Let's discuss how we can achieve similar results for your business. <a href="/#/services" style={{color: '#2563eb'}}>Explore our services</a> or <a href="/#/about" style={{color: '#2563eb'}}>learn more about us</a>.</p>
+          <h2>{t('caseStudies.ready')}</h2>
+          <p>{t('caseStudies.discuss')}</p>
           <a href="mailto:tech@techconcepts.org?subject=Project Discussion" className="btn btn-primary">
-            Start Your Project
+            {t('caseStudies.start')}
           </a>
         </div>
       </section>

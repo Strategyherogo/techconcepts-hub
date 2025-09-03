@@ -1,0 +1,77 @@
+{
+  "nav": {
+    "home": "Início",
+    "services": "Serviços",
+    "caseStudies": "Casos de Sucesso",
+    "about": "Sobre",
+    "blog": "Blog",
+    "contact": "Contato"
+  },
+  "hero": {
+    "badge": "Consultor ML em Madrid • 10+ Aplicações em Produção",
+    "title": "Consultor de Machine Learning e Desenvolvedor de Extensões Chrome em Madrid",
+    "subtitle": "De extensões Chrome para VCs a modelos ML com impacto de €1,2M. Criando soluções SaaS inteligentes para mercados espanhóis e internacionais a partir de Madrid.",
+    "stats": {
+      "impact": "Impacto Empresarial",
+      "accuracy": "Precisão ML",
+      "providers": "Provedores LLM",
+      "products": "Produtos Ativos"
+    },
+    "buttons": {
+      "viewProducts": "Ver Produtos Ativos",
+      "github": "Portfólio GitHub"
+    }
+  },
+  "products": {
+    "title": "Produtos Prontos para Produção",
+    "subtitle": "Aplicações geradoras de receita implantadas e funcionando em produção"
+  },
+  "achievements": {
+    "title": "Impacto Empresarial Comprovado"
+  },
+  "technologies": {
+    "title": "Experiência Tecnológica"
+  },
+  "cta": {
+    "title": "Procurando um Consultor de Machine Learning em Madrid?",
+    "subtitle": "De MVPs a soluções ML empresariais, entrego aplicações prontas para produção que geram valor comercial real. Atendendo Madrid, Espanha e clientes internacionais.",
+    "sendEmail": "Enviar Email",
+    "viewGithub": "Ver GitHub"
+  },
+  "services": {
+    "hero": {
+      "title": "Serviços de Machine Learning e Desenvolvimento SaaS em Madrid",
+      "subtitle": "Consultoria profissional de ML e desenvolvimento de extensões Chrome de Madrid, Espanha. Entregando soluções prontas para produção com impacto empresarial mensurável em toda a Europa."
+    },
+    "ready": "Pronto para Construir Algo Incrível?",
+    "discuss": "Vamos discutir seu projeto e encontrar a solução perfeita.",
+    "consultation": "Agendar Consulta Gratuita",
+    "call": "Solicitar Chamada de 30 min"
+  },
+  "caseStudies": {
+    "hero": {
+      "title": "Resultados Comprovados, Impacto Real",
+      "subtitle": "Análise profunda de projetos que geraram milhões em valor e transformaram negócios"
+    },
+    "ready": "Pronto para Ser a Próxima História de Sucesso?",
+    "discuss": "Vamos discutir como podemos alcançar resultados semelhantes para o seu negócio.",
+    "start": "Iniciar Seu Projeto"
+  },
+  "about": {
+    "title": "Evgeny Goncharov",
+    "subtitle": "Diretor de TI e Operações de Produto | Especialista em Machine Learning | Desenvolvedor Full-Stack",
+    "location": "Madrid, Espanha • 19K+ Seguidores no LinkedIn",
+    "bio": {
+      "title": "Construindo Tecnologia que Gera Impacto"
+    }
+  },
+  "blog": {
+    "title": "Insights Tecnológicos e Histórias de Inovação",
+    "subtitle": "Explorando tendências tecnológicas, ecossistemas de inovação regional e conhecimentos práticos de desenvolvimento de produtos"
+  },
+  "footer": {
+    "rights": "Todos os direitos reservados",
+    "products": "Produtos Ativos",
+    "connect": "Conectar"
+  }
+}

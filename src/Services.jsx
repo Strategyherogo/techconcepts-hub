@@ -1,6 +1,8 @@
 import './App.css'
+import { useTranslation } from 'react-i18next'
 
 function Services() {
+  const { t } = useTranslation()
   const services = [
     {
       title: "Machine Learning Solutions",
@@ -129,11 +131,8 @@ function Services() {
       {/* Hero Section */}
       <section className="services-hero">
         <div className="container">
-          <h1 className="services-title">Machine Learning & SaaS Development Services in Madrid</h1>
-          <p className="services-subtitle">
-            Professional ML consulting and Chrome extension development from Madrid, Spain. 
-            Delivering production-ready solutions with measurable business impact across Europe.
-          </p>
+          <h1 className="services-title">{t('services.hero.title')}</h1>
+          <p className="services-subtitle">{t('services.hero.subtitle')}</p>
           <div className="services-stats">
             <div className="stat-item">
               <span className="stat-value">€1.2M+</span>
@@ -248,14 +247,14 @@ function Services() {
       {/* CTA Section */}
       <section className="services-cta">
         <div className="container">
-          <h2>Ready to Build Something Amazing?</h2>
-          <p>Let's discuss your project and find the perfect solution. <a href="/#/case-studies" style={{color: '#2563eb'}}>View our case studies</a> for proven results.</p>
+          <h2>{t('services.ready')}</h2>
+          <p>{t('services.discuss')}</p>
           <div className="cta-buttons">
             <a href="mailto:tech@techconcepts.org?subject=Project Inquiry - Free Consultation" className="btn btn-primary">
-              Schedule Free Consultation
+              {t('services.consultation')}
             </a>
             <a href="mailto:tech@techconcepts.org?subject=Request 30-min Call" className="btn btn-secondary">
-              Request 30-min Call
+              {t('services.call')}
             </a>
           </div>
         </div>

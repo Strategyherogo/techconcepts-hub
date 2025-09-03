@@ -1,0 +1,77 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "caseStudies": "Case Studies",
+    "about": "About",
+    "blog": "Blog",
+    "contact": "Contact"
+  },
+  "hero": {
+    "badge": "Madrid-Based ML Consultant • 10+ Production Applications",
+    "title": "Machine Learning Consultant & Chrome Extension Developer in Madrid",
+    "subtitle": "From Chrome extensions for VCs to ML models with €1.2M impact. Creating intelligent SaaS solutions for Spanish and international markets from Madrid.",
+    "stats": {
+      "impact": "Business Impact",
+      "accuracy": "ML Accuracy",
+      "providers": "LLM Providers",
+      "products": "Live Products"
+    },
+    "buttons": {
+      "viewProducts": "View Live Products",
+      "github": "GitHub Portfolio"
+    }
+  },
+  "products": {
+    "title": "Production-Ready Products",
+    "subtitle": "Revenue-generating applications deployed and running in production"
+  },
+  "achievements": {
+    "title": "Proven Business Impact"
+  },
+  "technologies": {
+    "title": "Technology Expertise"
+  },
+  "cta": {
+    "title": "Looking for a Machine Learning Consultant in Madrid?",
+    "subtitle": "From MVPs to enterprise ML solutions, I deliver production-ready applications that generate real business value. Serving Madrid, Spain, and international clients.",
+    "sendEmail": "Send Email",
+    "viewGithub": "View GitHub"
+  },
+  "services": {
+    "hero": {
+      "title": "Machine Learning & SaaS Development Services in Madrid",
+      "subtitle": "Professional ML consulting and Chrome extension development from Madrid, Spain. Delivering production-ready solutions with measurable business impact across Europe."
+    },
+    "ready": "Ready to Build Something Amazing?",
+    "discuss": "Let's discuss your project and find the perfect solution.",
+    "consultation": "Schedule Free Consultation",
+    "call": "Request 30-min Call"
+  },
+  "caseStudies": {
+    "hero": {
+      "title": "Proven Results, Real Impact",
+      "subtitle": "Deep dive into projects that generated millions in value and transformed businesses"
+    },
+    "ready": "Ready to Be the Next Success Story?",
+    "discuss": "Let's discuss how we can achieve similar results for your business.",
+    "start": "Start Your Project"
+  },
+  "about": {
+    "title": "Evgeny Goncharov",
+    "subtitle": "IT & Product Operations Director | Machine Learning Expert | Full-Stack Developer",
+    "location": "Madrid, Spain • 19K+ LinkedIn Followers",
+    "bio": {
+      "title": "Building Technology That Delivers Impact"
+    }
+  },
+  "blog": {
+    "title": "Tech Insights & Innovation Stories",
+    "subtitle": "Exploring technology trends, regional innovation ecosystems, and practical product development insights"
+  },
+  "footer": {
+    "rights": "All rights reserved",
+    "products": "Live Products",
+    "connect": "Connect"
+  }
+}

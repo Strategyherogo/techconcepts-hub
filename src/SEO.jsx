@@ -1,8 +1,10 @@
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 
 function SEO() {
   const location = useLocation()
+  const { i18n } = useTranslation()
 
   useEffect(() => {
     // Define page-specific SEO data
@@ -82,7 +84,32 @@ function SEO() {
     }
     canonical.href = `https://techconcepts.org${currentPath === '/' ? '' : '/#' + currentPath}`
 
-  }, [location])
+    // Add hreflang tags for multi-language support
+    const languages = ['en', 'es', 'fr', 'de', 'pt']
+    
+    // Remove existing hreflang tags
+    document.querySelectorAll('link[rel="alternate"][hreflang]').forEach(tag => tag.remove())
+    
+    // Add new hreflang tags
+    languages.forEach(lang => {
+      const hreflang = document.createElement('link')
+      hreflang.rel = 'alternate'
+      hreflang.hreflang = lang
+      hreflang.href = `https://techconcepts.org${currentPath === '/' ? '' : '/#' + currentPath}?lang=${lang}`
+      document.head.appendChild(hreflang)
+    })
+    
+    // Add x-default hreflang
+    const hreflangDefault = document.createElement('link')
+    hreflangDefault.rel = 'alternate'
+    hreflangDefault.hreflang = 'x-default'
+    hreflangDefault.href = `https://techconcepts.org${currentPath === '/' ? '' : '/#' + currentPath}`
+    document.head.appendChild(hreflangDefault)
+    
+    // Update HTML lang attribute
+    document.documentElement.lang = i18n.language
+
+  }, [location, i18n.language])
 
   return null
 }

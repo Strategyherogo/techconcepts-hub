@@ -1,7 +1,9 @@
 import { useState } from 'react'
 import './App.css'
+import { useTranslation } from 'react-i18next'
 
 function Blog() {
+  const { t } = useTranslation()
   const [email, setEmail] = useState('')
   const [newsletterStatus, setNewsletterStatus] = useState('')
 
@@ -115,10 +117,8 @@ function Blog() {
       {/* Hero Section */}
       <section className="blog-hero">
         <div className="container">
-          <h1 className="blog-title">Tech Insights & Innovation Stories</h1>
-          <p className="blog-subtitle">
-            Exploring technology trends, regional innovation ecosystems, and practical product development insights
-          </p>
+          <h1 className="blog-title">{t('blog.title')}</h1>
+          <p className="blog-subtitle">{t('blog.subtitle')}</p>
           <div className="blog-stats">
             <span>19K+ LinkedIn Followers</span>
             <span>•</span>

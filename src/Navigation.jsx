@@ -1,7 +1,10 @@
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
+import LanguageSwitcher from './LanguageSwitcher'
 
 function Navigation() {
+  const { t } = useTranslation()
   const location = useLocation()
   const navigate = useNavigate()
 
@@ -46,11 +49,11 @@ function Navigation() {
       <div className="container">
         <Link to="/" className="nav-brand">TechConcepts</Link>
         <ul className="nav-menu">
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/services">Services</Link></li>
-          <li><Link to="/case-studies">Case Studies</Link></li>
-          <li><Link to="/about">About</Link></li>
-          <li><Link to="/blog">Blog</Link></li>
+          <li><Link to="/">{t('nav.home')}</Link></li>
+          <li><Link to="/services">{t('nav.services')}</Link></li>
+          <li><Link to="/case-studies">{t('nav.caseStudies')}</Link></li>
+          <li><Link to="/about">{t('nav.about')}</Link></li>
+          <li><Link to="/blog">{t('nav.blog')}</Link></li>
           <li>
             <a 
               href="#contact" 
@@ -59,8 +62,11 @@ function Navigation() {
                 scrollToSection('contact')
               }}
             >
-              Contact
+              {t('nav.contact')}
             </a>
+          </li>
+          <li className="language-switcher-nav">
+            <LanguageSwitcher />
           </li>
         </ul>
       </div>

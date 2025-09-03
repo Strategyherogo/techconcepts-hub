@@ -1,16 +1,16 @@
 import './App.css'
+import { useTranslation } from 'react-i18next'
 
 function About() {
+  const { t } = useTranslation()
   return (
     <div className="about-page">
       {/* Hero Section */}
       <section className="about-hero">
         <div className="container">
-          <h1 className="about-title">Evgeny Goncharov</h1>
-          <p className="about-subtitle">
-            IT & Product Operations Director | Machine Learning Expert | Full-Stack Developer
-          </p>
-          <div className="about-location">📍 Madrid, Spain • 🌐 19K+ LinkedIn Followers</div>
+          <h1 className="about-title">{t('about.title')}</h1>
+          <p className="about-subtitle">{t('about.subtitle')}</p>
+          <div className="about-location">{t('about.location')}</div>
         </div>
       </section>
 
@@ -19,7 +19,7 @@ function About() {
         <div className="container">
           <div className="bio-content">
             <div className="bio-main">
-              <h2>Building Technology That Delivers Impact</h2>
+              <h2>{t('about.bio.title')}</h2>
               <p>
                 I'm a technology leader with over a decade of experience transforming ideas into 
                 production-ready solutions that generate real business value. From developing ML models 

@@ -1,0 +1,77 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "services": "Servicios",
+    "caseStudies": "Casos de Éxito",
+    "about": "Acerca de",
+    "blog": "Blog",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "badge": "Consultor ML en Madrid • 10+ Aplicaciones en Producción",
+    "title": "Consultor de Machine Learning y Desarrollador de Extensiones Chrome en Madrid",
+    "subtitle": "Desde extensiones Chrome para VCs hasta modelos ML con impacto de €1.2M. Creando soluciones SaaS inteligentes para mercados españoles e internacionales desde Madrid.",
+    "stats": {
+      "impact": "Impacto Empresarial",
+      "accuracy": "Precisión ML",
+      "providers": "Proveedores LLM",
+      "products": "Productos Activos"
+    },
+    "buttons": {
+      "viewProducts": "Ver Productos Activos",
+      "github": "Portafolio GitHub"
+    }
+  },
+  "products": {
+    "title": "Productos Listos para Producción",
+    "subtitle": "Aplicaciones generadoras de ingresos desplegadas y funcionando en producción"
+  },
+  "achievements": {
+    "title": "Impacto Empresarial Comprobado"
+  },
+  "technologies": {
+    "title": "Experiencia Tecnológica"
+  },
+  "cta": {
+    "title": "¿Buscas un Consultor de Machine Learning en Madrid?",
+    "subtitle": "Desde MVPs hasta soluciones ML empresariales, entrego aplicaciones listas para producción que generan valor comercial real. Atendiendo a Madrid, España y clientes internacionales.",
+    "sendEmail": "Enviar Email",
+    "viewGithub": "Ver GitHub"
+  },
+  "services": {
+    "hero": {
+      "title": "Servicios de Machine Learning y Desarrollo SaaS en Madrid",
+      "subtitle": "Consultoría profesional de ML y desarrollo de extensiones Chrome desde Madrid, España. Entregando soluciones listas para producción con impacto empresarial medible en toda Europa."
+    },
+    "ready": "¿Listo para Construir Algo Increíble?",
+    "discuss": "Hablemos de tu proyecto y encontremos la solución perfecta.",
+    "consultation": "Programar Consulta Gratuita",
+    "call": "Solicitar Llamada de 30 min"
+  },
+  "caseStudies": {
+    "hero": {
+      "title": "Resultados Comprobados, Impacto Real",
+      "subtitle": "Análisis profundo de proyectos que generaron millones en valor y transformaron negocios"
+    },
+    "ready": "¿Listo para Ser la Próxima Historia de Éxito?",
+    "discuss": "Hablemos de cómo podemos lograr resultados similares para tu negocio.",
+    "start": "Iniciar Tu Proyecto"
+  },
+  "about": {
+    "title": "Evgeny Goncharov",
+    "subtitle": "Director de IT y Operaciones de Producto | Experto en Machine Learning | Desarrollador Full-Stack",
+    "location": "Madrid, España • 19K+ Seguidores en LinkedIn",
+    "bio": {
+      "title": "Construyendo Tecnología que Genera Impacto"
+    }
+  },
+  "blog": {
+    "title": "Perspectivas Tecnológicas e Historias de Innovación",
+    "subtitle": "Explorando tendencias tecnológicas, ecosistemas de innovación regional y conocimientos prácticos de desarrollo de productos"
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados",
+    "products": "Productos Activos",
+    "connect": "Conectar"
+  }
+}

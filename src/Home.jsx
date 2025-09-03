@@ -1,38 +1,37 @@
 import './App.css'
+import { useTranslation } from 'react-i18next'
 
 function Home() {
+  const { t } = useTranslation()
   return (
     <>
       {/* Hero Section */}
       <section className="hero">
         <div className="container">
-          <div className="hero-badge">Madrid-Based ML Consultant • 10+ Production Applications</div>
-          <h1 className="hero-title">Machine Learning Consultant & Chrome Extension Developer in Madrid</h1>
-          <p className="hero-subtitle">
-            From Chrome extensions for VCs to ML models with €1.2M impact. 
-            Creating intelligent SaaS solutions for Spanish and international markets from Madrid.
-          </p>
+          <div className="hero-badge">{t('hero.badge')}</div>
+          <h1 className="hero-title">{t('hero.title')}</h1>
+          <p className="hero-subtitle">{t('hero.subtitle')}</p>
           <div className="hero-stats">
             <div className="stat">
               <span className="stat-number">€1.2M</span>
-              <span className="stat-label">Business Impact</span>
+              <span className="stat-label">{t('hero.stats.impact')}</span>
             </div>
             <div className="stat">
               <span className="stat-number">74-82%</span>
-              <span className="stat-label">ML Accuracy</span>
+              <span className="stat-label">{t('hero.stats.accuracy')}</span>
             </div>
             <div className="stat">
               <span className="stat-number">9</span>
-              <span className="stat-label">LLM Providers</span>
+              <span className="stat-label">{t('hero.stats.providers')}</span>
             </div>
             <div className="stat">
               <span className="stat-number">4</span>
-              <span className="stat-label">Live Products</span>
+              <span className="stat-label">{t('hero.stats.products')}</span>
             </div>
           </div>
           <div className="hero-buttons">
-            <a href="#products" className="btn btn-primary">View Live Products</a>
-            <a href="https://github.com/Strategyherogo" className="btn btn-secondary">GitHub Portfolio</a>
+            <a href="#products" className="btn btn-primary">{t('hero.buttons.viewProducts')}</a>
+            <a href="https://github.com/Strategyherogo" className="btn btn-secondary">{t('hero.buttons.github')}</a>
           </div>
         </div>
       </section>
@@ -40,8 +39,8 @@ function Home() {
       {/* Live Products Section */}
       <section id="products" className="products">
         <div className="container">
-          <h2 className="section-title">Production-Ready Products</h2>
-          <p className="section-subtitle">Revenue-generating applications deployed and running in production</p>
+          <h2 className="section-title">{t('products.title')}</h2>
+          <p className="section-subtitle">{t('products.subtitle')}</p>
           
           <div className="products-grid">
             {/* DealFlow Analytics */}
@@ -171,7 +170,7 @@ function Home() {
       {/* Achievements Section */}
       <section id="achievements" className="achievements">
         <div className="container">
-          <h2 className="section-title">Proven Business Impact</h2>
+          <h2 className="section-title">{t('achievements.title')}</h2>
           
           <div className="achievement-cards">
             <div className="achievement-card">
@@ -204,7 +203,7 @@ function Home() {
       {/* Technologies Section */}
       <section id="technologies" className="technologies">
         <div className="container">
-          <h2 className="section-title">Technology Expertise</h2>
+          <h2 className="section-title">{t('technologies.title')}</h2>
           
           <div className="tech-categories">
             <div className="tech-category">
@@ -267,11 +266,11 @@ function Home() {
       {/* CTA Section */}
       <section id="contact" className="cta">
         <div className="container">
-          <h2>Looking for a Machine Learning Consultant in Madrid?</h2>
-          <p>From MVPs to enterprise ML solutions, I deliver production-ready applications that generate real business value. Serving Madrid, Spain, and international clients.</p>
+          <h2>{t('cta.title')}</h2>
+          <p>{t('cta.subtitle')}</p>
           <div className="cta-buttons">
-            <a href="mailto:tech@techconcepts.org" className="btn btn-primary">Send Email</a>
-            <a href="https://github.com/Strategyherogo" className="btn btn-secondary">View GitHub</a>
+            <a href="mailto:tech@techconcepts.org" className="btn btn-primary">{t('cta.sendEmail')}</a>
+            <a href="https://github.com/Strategyherogo" className="btn btn-secondary">{t('cta.viewGithub')}</a>
           </div>
         </div>
       </section>

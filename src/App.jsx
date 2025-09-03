@@ -1,5 +1,6 @@
 import { HashRouter as Router, Routes, Route } from 'react-router-dom'
 import { lazy, Suspense } from 'react'
+import { useTranslation } from 'react-i18next'
 import Home from './Home'
 import Navigation from './Navigation'
 import SEO from './SEO'
@@ -13,6 +14,7 @@ const CaseStudies = lazy(() => import('./CaseStudies'))
 const NotFound = lazy(() => import('./NotFound'))
 
 function App() {
+  const { t } = useTranslation()
   return (
     <Router>
       <div className="app">
@@ -50,7 +52,7 @@ function App() {
                 </div>
               </div>
               <div className="footer-section">
-                <h4>Live Products</h4>
+                <h4>{t('footer.products')}</h4>
                 <ul>
                   <li><a href="https://monkfish-app-7otbm.ondigitalocean.app">DealFlow Analytics API</a></li>
                   <li><a href="https://github.com/Strategyherogo">LLMChat for macOS</a></li>
@@ -59,7 +61,7 @@ function App() {
                 </ul>
               </div>
               <div className="footer-section">
-                <h4>Connect</h4>
+                <h4>{t('footer.connect')}</h4>
                 <ul>
                   <li><a href="https://linkedin.com/in/evgoncharov">LinkedIn (19K followers)</a></li>
                   <li><a href="https://github.com/Strategyherogo">GitHub Portfolio</a></li>
@@ -68,7 +70,7 @@ function App() {
               </div>
             </div>
             <div className="footer-bottom">
-              <p>&copy; 2025 TechConcepts by Evgeny Goncharov. All rights reserved.</p>
+              <p>&copy; 2025 TechConcepts by Evgeny Goncharov. {t('footer.rights')}</p>
             </div>
           </div>
         </footer>
