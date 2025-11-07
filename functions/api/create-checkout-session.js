@@ -1,6 +1,4 @@
 // Cloudflare Function for Stripe Checkout Session
-import Stripe from 'stripe';
-
 const PACKAGES = {
     starter: { results: 50, price: 2900 },
     pro: { results: 100, price: 4900 },
@@ -10,8 +8,6 @@ const PACKAGES = {
 export async function onRequestPost(context) {
     try {
         const { request, env } = context;
-        const stripe = new Stripe(env.STRIPE_SECRET_KEY);
-
         const body = await request.json();
         const { searchQuery, email, package: packageName } = body;
 
@@ -23,31 +19,36 @@ export async function onRequestPost(context) {
             });
         }
 
-        // Create Stripe checkout session
-        const session = await stripe.checkout.sessions.create({
-            payment_method_types: ['card'],
-            line_items: [{
-                price_data: {
-                    currency: 'usd',
-                    product_data: {
-                        name: `Google Maps Scraper - ${packageName.charAt(0).toUpperCase() + packageName.slice(1)}`,
-                        description: `Extract ${pkg.results} businesses from Google Maps`,
-                    },
-                    unit_amount: pkg.price,
-                },
-                quantity: 1,
-            }],
-            mode: 'payment',
-            success_url: `${new URL(request.url).origin}/success.html`,
-            cancel_url: `${new URL(request.url).origin}/cancel.html`,
-            customer_email: email,
-            metadata: {
-                searchQuery,
-                email,
-                maxResults: pkg.results.toString(),
-                package: packageName
-            }
+        // Create Stripe checkout session using fetch API
+        const stripeResponse = await fetch('https://api.stripe.com/v1/checkout/sessions', {
+            method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${env.STRIPE_SECRET_KEY}`,
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: new URLSearchParams({
+                'payment_method_types[0]': 'card',
+                'line_items[0][price_data][currency]': 'usd',
+                'line_items[0][price_data][product_data][name]': `Google Maps Scraper - ${packageName.charAt(0).toUpperCase() + packageName.slice(1)}`,
+                'line_items[0][price_data][product_data][description]': `Extract ${pkg.results} businesses from Google Maps`,
+                'line_items[0][price_data][unit_amount]': pkg.price.toString(),
+                'line_items[0][quantity]': '1',
+                'mode': 'payment',
+                'success_url': `${new URL(request.url).origin}/scraper/success.html`,
+                'cancel_url': `${new URL(request.url).origin}/scraper/cancel.html`,
+                'customer_email': email,
+                'metadata[searchQuery]': searchQuery,
+                'metadata[email]': email,
+                'metadata[maxResults]': pkg.results.toString(),
+                'metadata[package]': packageName
+            })
         });
+
+        const session = await stripeResponse.json();
+
+        if (!stripeResponse.ok) {
+            throw new Error(session.error?.message || 'Stripe API error');
+        }
 
         return new Response(JSON.stringify({
             sessionId: session.id,

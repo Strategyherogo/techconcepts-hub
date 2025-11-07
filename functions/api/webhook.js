@@ -1,21 +1,19 @@
 // Cloudflare Function for Stripe Webhook
-import Stripe from 'stripe';
-
 export async function onRequestPost(context) {
     const { request, env } = context;
 
     try {
-        const stripe = new Stripe(env.STRIPE_SECRET_KEY);
         const sig = request.headers.get('stripe-signature');
         const body = await request.text();
 
-        let event;
-        try {
-            event = stripe.webhooks.constructEvent(body, sig, env.STRIPE_WEBHOOK_SECRET);
-        } catch (err) {
-            console.error('Webhook signature verification failed:', err.message);
-            return new Response(`Webhook Error: ${err.message}`, { status: 400 });
+        // Verify webhook signature
+        const verified = await verifyStripeSignature(body, sig, env.STRIPE_WEBHOOK_SECRET);
+        if (!verified) {
+            console.error('Webhook signature verification failed');
+            return new Response('Webhook Error: Invalid signature', { status: 400 });
         }
+
+        const event = JSON.parse(body);
 
         // Handle checkout.session.completed
         if (event.type === 'checkout.session.completed') {
@@ -35,6 +33,39 @@ export async function onRequestPost(context) {
             status: 500,
             headers: { 'Content-Type': 'application/json' }
         });
+    }
+}
+
+async function verifyStripeSignature(payload, header, secret) {
+    try {
+        const encoder = new TextEncoder();
+        const parts = header.split(',');
+        const timestamp = parts.find(part => part.startsWith('t=')).split('=')[1];
+        const signature = parts.find(part => part.startsWith('v1=')).split('=')[1];
+
+        const signedPayload = `${timestamp}.${payload}`;
+        const key = await crypto.subtle.importKey(
+            'raw',
+            encoder.encode(secret),
+            { name: 'HMAC', hash: 'SHA-256' },
+            false,
+            ['sign']
+        );
+
+        const signatureBytes = await crypto.subtle.sign(
+            'HMAC',
+            key,
+            encoder.encode(signedPayload)
+        );
+
+        const expectedSignature = Array.from(new Uint8Array(signatureBytes))
+            .map(b => b.toString(16).padStart(2, '0'))
+            .join('');
+
+        return expectedSignature === signature;
+    } catch (err) {
+        console.error('Signature verification error:', err);
+        return false;
     }
 }
 
