@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Maps Business Scraper - TechConcepts</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding-top: 40px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 32px;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 18px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        input:focus,
+        select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .pricing-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .pricing-card {
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .pricing-card:hover {
+            border-color: #667eea;
+            transform: translateY(-5px);
+        }
+
+        .pricing-card.selected {
+            border-color: #667eea;
+            background: #f0f4ff;
+        }
+
+        .pricing-card .price {
+            font-size: 32px;
+            font-weight: bold;
+            color: #667eea;
+            margin: 10px 0;
+        }
+
+        .pricing-card .results {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .features {
+            margin-top: 40px;
+            padding-top: 40px;
+            border-top: 2px solid #e0e0e0;
+        }
+
+        .features h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            color: #666;
+        }
+
+        .feature-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .status {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            display: none;
+        }
+
+        .status.loading {
+            background: #fff3cd;
+            color: #856404;
+            display: block;
+        }
+
+        .status.success {
+            background: #d4edda;
+            color: #155724;
+            display: block;
+        }
+
+        .status.error {
+            background: #f8d7da;
+            color: #721c24;
+            display: block;
+        }
+
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+            display: none;
+        }
+
+        .loader.active {
+            display: block;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>Google Maps Business Scraper</h1>
+            <p class="subtitle">Extract business data from Google Maps in minutes</p>
+
+            <form id="scraperForm">
+                <div class="form-group">
+                    <label for="searchQuery">What are you looking for?</label>
+                    <input
+                        type="text"
+                        id="searchQuery"
+                        name="searchQuery"
+                        placeholder="e.g., coffee shops in San Francisco"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label>Choose your package:</label>
+                    <div class="pricing-options">
+                        <div class="pricing-card" data-package="starter" data-results="50" data-price="29">
+                            <div class="package-name">Starter</div>
+                            <div class="price">$29</div>
+                            <div class="results">50 results</div>
+                        </div>
+                        <div class="pricing-card selected" data-package="pro" data-results="100" data-price="49">
+                            <div class="package-name">Pro</div>
+                            <div class="price">$49</div>
+                            <div class="results">100 results</div>
+                        </div>
+                        <div class="pricing-card" data-package="business" data-results="500" data-price="149">
+                            <div class="package-name">Business</div>
+                            <div class="price">$149</div>
+                            <div class="results">500 results</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Your email (to receive results)</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="your@email.com"
+                        required
+                    >
+                </div>
+
+                <button type="submit" class="btn" id="submitBtn">
+                    Start Scraping
+                </button>
+            </form>
+
+            <div class="loader" id="loader"></div>
+
+            <div class="status" id="status"></div>
+
+            <div class="features">
+                <h2>What You'll Get:</h2>
+                <ul class="feature-list">
+                    <li>Business names and addresses</li>
+                    <li>Phone numbers and websites</li>
+                    <li>Ratings and review counts</li>
+                    <li>Business categories</li>
+                    <li>Google Maps URLs</li>
+                    <li>Delivered as CSV/Excel file</li>
+                    <li>Results within 5-10 minutes</li>
+                    <li>Perfect for lead generation</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Stripe.js -->
+    <script src="https://js.stripe.com/v3/"></script>
+
+    <script>
+        let selectedPackage = {
+            name: 'pro',
+            results: 100,
+            price: 49
+        };
+
+        // Handle pricing card selection
+        document.querySelectorAll('.pricing-card').forEach(card => {
+            card.addEventListener('click', function() {
+                document.querySelectorAll('.pricing-card').forEach(c => c.classList.remove('selected'));
+                this.classList.add('selected');
+                selectedPackage = {
+                    name: this.dataset.package,
+                    results: parseInt(this.dataset.results),
+                    price: parseInt(this.dataset.price)
+                };
+            });
+        });
+
+        // Handle form submission with Stripe
+        document.getElementById('scraperForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const searchQuery = document.getElementById('searchQuery').value;
+            const email = document.getElementById('email').value;
+            const submitBtn = document.getElementById('submitBtn');
+            const loader = document.getElementById('loader');
+            const status = document.getElementById('status');
+
+            // Disable form
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Redirecting to payment...';
+            loader.classList.add('active');
+            status.className = 'status';
+            status.style.display = 'none';
+
+            try {
+                // Create Stripe checkout session
+                const response = await fetch('/api/create-checkout-session', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        searchQuery,
+                        email,
+                        package: selectedPackage.name
+                    })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    // Redirect to Stripe Checkout
+                    window.location.href = data.url;
+                } else {
+                    throw new Error(data.error || 'Something went wrong');
+                }
+            } catch (error) {
+                status.className = 'status error';
+                status.textContent = `Error: ${error.message}. Please try again or contact support.`;
+                status.style.display = 'block';
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Start Scraping';
+                loader.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
